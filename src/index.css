@@ -1,0 +1,102 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+#home-page {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  place-content: center;
+  margin: 0;
+  min-height: 100vh;
+}
+
+#home-page .cta-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+#home-page .button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+}
+
+#home-page .cta-login {
+  background-color: #f9f9f9;
+  color: #213547;
+  font-size: 18px;
+}
+
+#home-page .cta-register {
+  color: #f9f9f9;
+  background-color: #383A3F;
+  font-size: 18px;
+}
+
+#login-page {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  place-content: center;
+  margin: 0;
+  min-height: 100vh;
+}
+
+#login-page #login-form {
+  justify-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+input {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  font-size: 18px;
+}
+
+button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  font-size: 18px;
+}
