@@ -75,59 +75,97 @@ export default function Login({ passActionData }: Props) {
       <h1>Rapptr Labs</h1>
       <Form method="post" id="login-form">
         <label htmlFor="username">Email</label>
-        <Input
-          {...register("email", {
-            required: "required",
-            pattern: {
-              value: /\S+@\S+\.\S+/,
-              message: "Not a valid email.",
-            },
-            maxLength: 50,
-          })}
-          type="email"
-          name="email"
-          id="email"
-          placeholder="user@rapptrlabs.com"
-          setValue={setValue}
-          style={{
-            outline: errors?.password?.message ? "1px solid #E0144C" : "none",
-          }}
-          className="chrome-style browser-style"
-          control={control}
-        />
-        {errors.email && (
-          <span role="alert" style={{ color: "#E0144C" }}>
-            {errors.email.message}
-          </span>
-        )}
+        <div
+          className="browser-style chrome-style"
+          style={{ position: "relative" }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              alignSelf: "center",
+              top: 7,
+              left: 7,
+            }}
+          >
+            👤
+          </div>
+          <Input
+            {...register("email", {
+              required: "required",
+              pattern: {
+                value: /\S+@\S+\.\S+/,
+                message: "Not a valid email.",
+              },
+              maxLength: 50,
+            })}
+            type="email"
+            name="email"
+            id="email"
+            placeholder="user@rapptrlabs.com"
+            setValue={setValue}
+            style={{
+              outline: errors?.password?.message ? "1px solid #E0144C" : "none",
+              paddingLeft: 30,
+            }}
+            className="chrome-style browser-style"
+            control={control}
+          />
+          {errors.email && (
+            <span role="alert" style={{ color: "#E0144C" }}>
+              {errors.email.message}
+            </span>
+          )}
+        </div>
         <label htmlFor="password">Password</label>
-        <Input
-          {...register("password", {
-            required: "required",
-            min: 4,
-            max: 16,
-            pattern: {
-              value: /^(?=.*[A-Z]).{4,16}$/,
-              message: "Password must be between 4 and 16 characters",
-            },
-          })}
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Must be at least 4 characters"
-          setValue={setValue}
-          style={{
-            outline: errors?.password?.message ? "1px solid #E0144C" : "none",
-          }}
-          className="chrome-style browser-style"
-          control={control}
-        />
-        {errors.password && (
-          <span role="alert" style={{ color: "#E0144C" }}>
-            {errors.password.message}
-          </span>
-        )}
-        <button className="button" type="button" onClick={onSubmit}>
+
+        <div
+          className="browser-style chrome-style"
+          style={{ position: "relative" }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              alignSelf: "center",
+              top: 7,
+              left: 7,
+            }}
+          >
+            🔒
+          </div>
+          <Input
+            {...register("password", {
+              required: "required",
+              min: 4,
+              max: 16,
+              pattern: {
+                value: /^(?=.*[A-Z]).{4,16}$/,
+                message: "Password must be between 4 and 16 characters",
+              },
+            })}
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Must be at least 4 characters"
+            setValue={setValue}
+            style={{
+              outline: errors?.password?.message ? "1px solid #E0144C" : "none",
+              paddingLeft: 30,
+            }}
+            className="chrome-style browser-style"
+            control={control}
+          />
+          {errors.password && (
+            <span role="alert" style={{ color: "#E0144C" }}>
+              {errors.password.message}
+            </span>
+          )}
+        </div>
+        <button
+          className="button"
+          type="button"
+          onClick={onSubmit}
+          disabled={!formState.isDirty}
+        >
           Login
         </button>
       </Form>
