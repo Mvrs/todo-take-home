@@ -38,6 +38,31 @@ export default function Login({ passActionData }: Props) {
   const onSubmit = handleSubmit(async ({ email, password }: FormValues) => {
     setUser({ ...user });
     window.localStorage.setItem("user", JSON.stringify(user));
+    // try {
+    //   const response = await fetch(
+    //     "http://dev.rapptrlabs.com/Tests/scripts/user-login.php",
+    //     {
+    //       method: "POST",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //         "Access-Control-Allow-Origin": "*",
+    //         "Access-Control-Allow-Headers": "Content-Type",
+    //         "Access-Control-Allow-Methods": "OPTIONS,POST,GET",
+    //       },
+    //       body: JSON.stringify({
+    //         email: user.email,
+    //         password: user.password,
+    //       }),
+    //     },
+    //   );
+    //   const data = await response.json();
+    //   // enter you logic when the fetch is successful
+    //   console.log(data);
+    // } catch (error) {
+    //   // enter your logic for when there is an error (ex. error toast)
+    //   console.log(error);
+    // }
+
     navigate("/todo-app");
   });
 
@@ -64,10 +89,17 @@ export default function Login({ passActionData }: Props) {
           id="email"
           placeholder="user@rapptrlabs.com"
           setValue={setValue}
-          // autocomplete="email"
+          style={{
+            outline: errors?.password?.message ? "1px solid #E0144C" : "none",
+          }}
+          className="chrome-style browser-style"
           control={control}
         />
-        {errors.email && <span role="alert">{errors.email.message}</span>}
+        {errors.email && (
+          <span role="alert" style={{ color: "#E0144C" }}>
+            {errors.email.message}
+          </span>
+        )}
         <label htmlFor="password">Password</label>
         <Input
           {...register("password", {
@@ -84,10 +116,17 @@ export default function Login({ passActionData }: Props) {
           id="password"
           placeholder="Must be at least 4 characters"
           setValue={setValue}
-          // autocomplete="off"
+          style={{
+            outline: errors?.password?.message ? "1px solid #E0144C" : "none",
+          }}
+          className="chrome-style browser-style"
           control={control}
         />
-        {errors.password && <span role="alert">{errors.password.message}</span>}
+        {errors.password && (
+          <span role="alert" style={{ color: "#E0144C" }}>
+            {errors.password.message}
+          </span>
+        )}
         <button className="button" type="button" onClick={onSubmit}>
           Login
         </button>

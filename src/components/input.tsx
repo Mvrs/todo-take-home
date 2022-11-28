@@ -24,11 +24,22 @@ interface InputProps {
   id?: HTMLInputTypeAttribute;
   placeholder: HTMLInputTypeAttribute;
   autocomplete?: HTMLInputTypeAttribute;
+  style?: React.CSSProperties;
+  className?: React.HTMLAttributes<HTMLInputElement>["className"];
 }
 
 export const Input = forwardRef(
   (
-    { name, required, control, setValue, type, placeholder }: InputProps,
+    {
+      name,
+      required,
+      control,
+      setValue,
+      type,
+      placeholder,
+      style,
+      className,
+    }: InputProps,
     ref,
   ) => {
     const {
@@ -58,6 +69,8 @@ export const Input = forwardRef(
           onChange={field.onChange}
           type={type}
           placeholder={placeholder}
+          style={style}
+          className={className}
         />
       </div>
     );

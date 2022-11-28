@@ -44,6 +44,7 @@ const TodoList = ({ title = "Items", items, update, remove }: ListProps) => {
         <input
           id={`${id}-filter`}
           placeholder="Filter"
+          className="chrome-style browser-style"
           style={{
             paddingTop: "0.25rem",
             paddingBottom: "0.25rem",
