@@ -1,5 +1,86 @@
 # Todo Take Home
 
+### Screenshots
+
+<img width="1440" alt="Screenshot 2022-11-28 at 3 28 31 PM" src="https://user-images.githubusercontent.com/5723692/204402409-0107504a-73ae-40e3-b268-e1b8e11d960d.png">
+
+
+<img width="1440" alt="Screenshot 2022-11-28 at 3 17 01 PM" src="https://user-images.githubusercontent.com/5723692/204402447-9f7ce256-7411-41c5-b800-6b5fc3f093cd.png">
+
+
+<img width="1440" alt="Screenshot 2022-11-28 at 3 16 46 PM" src="https://user-images.githubusercontent.com/5723692/204402474-83240d11-39de-48e1-a259-7f77f7e53b7c.png">
+
+
+
+<img width="1440" alt="Screenshot 2022-11-28 at 2 43 19 PM" src="https://user-images.githubusercontent.com/5723692/204397848-863fd3b2-cf6b-4a7e-8275-41634f177bb0.png">
+
+
+
+<img width="1440" alt="Screenshot 2022-11-28 at 2 43 55 PM" src="https://user-images.githubusercontent.com/5723692/204397789-eed5391d-39d7-41a3-a85c-834effe7dd7e.png">
+
+
+
+<img width="1440" alt="Screenshot 2022-11-28 at 2 44 49 PM" src="https://user-images.githubusercontent.com/5723692/204397720-a329b25d-8af5-469b-83d3-0c8463558169.png">
+
+
+
+## 🚀 Quick start
+
+First, clone the repo:
+
+```
+git clone https://github.com/Mvrs/todo-take-home
+```
+
+Then install dependencies:
+
+```
+cd todo-take-home && yarn install
+```
+
+Start
+```
+yarn dev
+```
+
+## 🧐 What's Inside?
+
+- React Hook Form 
+- React 18
+- React Testing Library + Jest
+- TypeScript
+- Localstorage API
+- Inline Styles ( quick shortcuts :) ) + CSS
+- Route Route v6.4
+
+
+## Folder Structue
+
+```
+--src
+    --assets
+    --components
+        - input.tsx
+        - protected-route.tsx
+    --lib
+        - items.ts
+        - kebab-case.ts
+    --modules
+        - todo
+            - components
+                - header.tsx
+                - new-todo-item.tsx
+                - todo-item.tsx
+                - todo-list.tsx
+    --pages
+        - index.tsx
+        - login.tsx
+        - todo.tsx
+    --test
+        - items.test.ts
+        - setup.ts
+    --main.tsx
+```
 
 ### Login Page
 
@@ -78,3 +159,11 @@ mockup).
 10. [x]: Persist the data between sessions (local storage is fine).
 11. [x]: A logout button exists on the top right. Clicking the logout button will log the user out and
 return him or her to the login screen.
+
+
+### Note
+
+The Form Submission for the provided endpoint produced CORS errors, and it seems that
+no matter what solution I tried I was seeing `preflight` issues. Tried extensions for both Mozilla and Chrome. Digging deeper into the I noticed the connection was closed. 
+
+
