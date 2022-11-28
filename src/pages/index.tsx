@@ -3,6 +3,8 @@ import "../index.css";
 
 const Index = () => {
   const navigate = useNavigate();
+  const user = localStorage.getItem("user");
+
   return (
     <div id="home-page">
       <h1>Todo App</h1>
@@ -14,11 +16,22 @@ const Index = () => {
           onClick={() => {
             navigate("/login");
           }}
+          style={{ display: `${!!user ? "none" : "block"}` }}
         >
           Login
         </button>
-        <button className="button cta-register" type="button">
-          Start Creating Todos
+        <button
+          className="button cta-register"
+          type="button"
+          onClick={() => {
+            if (!!user) {
+              navigate("/todo-app");
+            } else {
+              alert(`Please login first`);
+            }
+          }}
+        >
+          {!!user ? "My List" : "Start Creating Todos"}
         </button>
       </div>
     </div>
